@@ -1,0 +1,44 @@
+Index: Makefile
+===================================================================
+--- Makefile	(revision 413936)
++++ Makefile	(working copy)
+@@ -1,7 +1,7 @@
+ # $FreeBSD$
+ 
+ PORTNAME=	git-lfs
+-PORTVERSION=	1.1.0
++PORTVERSION=	1.2.0
+ DISTVERSIONPREFIX=	v
+ CATEGORIES=	devel
+ MASTER_SITES=	GH GHC
+@@ -12,7 +12,7 @@
+ 
+ LICENSE=	MIT
+ 
+-BROKEN=		fails to build
++#BROKEN=		fails to build
+ 
+ USES=		go
+ USE_GITHUB=	yes
+@@ -21,4 +21,12 @@
+ 
+ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+ 
++# see https://github.com/github/git-lfs/wiki/Installation
++
++do-build:
++	cd ${WRKSRC} && script/bootstrap
++
++pre-install:
++	${INSTALL_PROGRAM} ${WRKSRC}/bin/git-lfs ${STAGEDIR}${PREFIX}/bin/git-lfs
++
+ .include <bsd.port.mk>
+Index: distinfo
+===================================================================
+--- distinfo	(revision 413936)
++++ distinfo	(working copy)
+@@ -1,2 +1,2 @@
+-SHA256 (git-lfs-v1.1.0_GH0.tar.gz) = 1f246ec5f1141677b05847b3e9bcb9929c9d9b1afc78585d5776a9c18186ea9b
+-SIZE (git-lfs-v1.1.0_GH0.tar.gz) = 345118
++SHA256 (git-lfs-v1.2.0_GH0.tar.gz) = daa0478095dc90423b8dbc934330fe50638a4c186959f8a8988bf9158cd1c54b
++SIZE (git-lfs-v1.2.0_GH0.tar.gz) = 367911
