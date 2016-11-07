@@ -8,14 +8,12 @@ MASTER_SITES=	GH GHC
 PKGNAMEPREFIX=	go-
 
 MAINTAINER=	kenji@k2r.org
-#MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Git extension for versioning large files
 
 LICENSE=	MIT
 
-#BROKEN=		fails to build
-#DEPRECATED=	Broken for more than 6 months
-#EXPIRATION_DATE=	2016-11-01
+BUILD_DEPENDS=  bash:shells/bash
+RUN_DEPENDS=    bash:shells/bash
 
 USES=		go
 USE_GITHUB=	yes
