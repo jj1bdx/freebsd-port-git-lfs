@@ -1,7 +1,7 @@
-# $FreeBSD: head/devel/git-lfs/Makefile 423051 2016-10-01 10:55:40Z antoine $
+# $FreeBSD: head/devel/git-lfs/Makefile 425729 2016-11-08 10:51:21Z rene $
 
 PORTNAME=	git-lfs
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES=	GH GHC
@@ -12,8 +12,8 @@ COMMENT=	Git extension for versioning large files
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=  bash:shells/bash
-RUN_DEPENDS=    bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		go
 USE_GITHUB=	yes
@@ -25,7 +25,7 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 # see https://github.com/github/git-lfs/wiki/Installation
 
 do-build:
-	cd ${WRKSRC} && mkdir ${WRKSRC}/.tmp && TMPDIR=${WRKSRC}/.tmp script/bootstrap
+	cd ${WRKSRC} && ${MKDIR} ${WRKSRC}/.tmp && TMPDIR=${WRKSRC}/.tmp script/bootstrap
 
 pre-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/git-lfs ${STAGEDIR}${PREFIX}/bin/git-lfs
