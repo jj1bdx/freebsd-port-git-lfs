@@ -4,7 +4,8 @@ Preserved here due to deprecation warning (by 1-NOV-2016)
 
 ## Related FreeBSD Bug PRs
 
-* 1.5.2 <https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214626>
+* 1.5.4 <https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=215678>
+* 1.5.3 <https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214626>
 * 1.4.4 <https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=214154>
 
 ## Notes
